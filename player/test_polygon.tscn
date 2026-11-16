@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bd7of2omlhj1y"]
 
 [ext_resource type="Script" uid="uid://dyqj073d412s3" path="res://player/effect.gd" id="1_ebio3"]
+[ext_resource type="PackedScene" uid="uid://dbu2u1t5oqesg" path="res://enemies/dummy.tscn" id="1_pby22"]
 [ext_resource type="PackedScene" uid="uid://c4fpdahw8galr" path="res://player/player.tscn" id="1_qpnus"]
 [ext_resource type="Texture2D" uid="uid://cd3rpqeq0invc" path="res://player/temp_test_house sprite.png" id="2_4dk3p"]
 
@@ -89,3 +90,6 @@ scale = Vector2(8.470332, 6.3356366)
 shape = SubResource("RectangleShape2D_lka6g")
 
 [node name="player" parent="." unique_id=9046938 instance=ExtResource("1_qpnus")]
+
+[node name="Dummy" parent="." unique_id=481085084 instance=ExtResource("1_pby22")]
+position = Vector2(41, -188)
