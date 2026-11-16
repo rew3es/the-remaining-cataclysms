@@ -2,11 +2,23 @@
 
 [ext_resource type="Script" uid="uid://bektb0hi2euxj" path="res://player/move.gd" id="1_oul6g"]
 
-[node name="player" type="Area2D" unique_id=138773134]
+[sub_resource type="CircleShape2D" id="CircleShape2D_pby22"]
+radius = 4.9999995
+
+[node name="player" type="CharacterBody2D" unique_id=9046938]
 script = ExtResource("1_oul6g")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=944824814]
+[node name="sprite_color_rect" type="ColorRect" parent="." unique_id=614536956]
+visibility_layer = 2
 offset_left = -21.0
 offset_top = -18.0
 offset_right = 19.0
 offset_bottom = 22.0
+metadata/_edit_use_anchors_ = true
+
+[node name="camera" type="Camera2D" parent="." unique_id=1296266033]
+
+[node name="player_collision" type="CollisionShape2D" parent="." unique_id=802244932]
+position = Vector2(-1, 16.999998)
+scale = Vector2(-4.0542574, 1.3251656)
+shape = SubResource("CircleShape2D_pby22")

@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bd7of2omlhj1y"]
+
+[ext_resource type="Script" uid="uid://dyqj073d412s3" path="res://player/effect.gd" id="1_ebio3"]
+[ext_resource type="PackedScene" uid="uid://c4fpdahw8galr" path="res://player/player.tscn" id="1_qpnus"]
+[ext_resource type="Texture2D" uid="uid://cd3rpqeq0invc" path="res://player/temp_test_house sprite.png" id="2_4dk3p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4ady"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g1dw6"]
+radius = 66.0
+height = 132.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lka6g"]
+size = Vector2(24.910473, 32.51449)
+
+[node name="test_polygon" type="Node2D" unique_id=1268673865]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1716839423]
+offset_left = -477.0
+offset_top = -383.0
+offset_right = 524.0
+offset_bottom = 371.0
+color = Color(0.47007585, 0.47007585, 0.47007585, 1)
+
+[node name="bariers" type="StaticBody2D" parent="." unique_id=1681456185]
+
+[node name="forward_barier" type="CollisionShape2D" parent="bariers" unique_id=1244592473]
+position = Vector2(-1, -392)
+scale = Vector2(54.49212, 0.79547405)
+shape = SubResource("RectangleShape2D_q4ady")
+
+[node name="bottom_barier" type="CollisionShape2D" parent="bariers" unique_id=1599504746]
+position = Vector2(0.9999981, 378)
+scale = Vector2(54.49212, 0.79547405)
+shape = SubResource("RectangleShape2D_q4ady")
+
+[node name="left_barier" type="CollisionShape2D" parent="bariers" unique_id=2136368709]
+position = Vector2(-485.99997, -3)
+scale = Vector2(0.9402685, -40.332466)
+shape = SubResource("RectangleShape2D_q4ady")
+
+[node name="right_barier" type="CollisionShape2D" parent="bariers" unique_id=453398960]
+position = Vector2(533, 10)
+scale = Vector2(0.9402685, -40.332466)
+shape = SubResource("RectangleShape2D_q4ady")
+
+[node name="house" type="StaticBody2D" parent="." unique_id=1074641134]
+
+[node name="house_ai_sprite" type="Sprite2D" parent="house" unique_id=1044923073]
+position = Vector2(-204, -257.00003)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_4dk3p")
+
+[node name="house_collision" type="CollisionShape2D" parent="house" unique_id=17017946]
+position = Vector2(-200.00002, -176)
+scale = Vector2(1.4243895, 0.22940107)
+shape = SubResource("CapsuleShape2D_g1dw6")
+
+[node name="effect_area" type="Area2D" parent="house" unique_id=869843447]
+position = Vector2(-202, -255)
+script = ExtResource("1_ebio3")
+
+[node name="efect_shape" type="CollisionShape2D" parent="house/effect_area" unique_id=1060208516]
+position = Vector2(-1.4999847, -33)
+scale = Vector2(8.470332, 6.3356366)
+shape = SubResource("RectangleShape2D_lka6g")
+
+[node name="player" parent="." unique_id=9046938 instance=ExtResource("1_qpnus")]
