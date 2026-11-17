@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cd3rpqeq0invc"
-path="res://.godot/imported/temp_test_house sprite.png-482f7a8ebafac20d4e2bdce899227c73.ctex"
+path="res://.godot/imported/temp_test_house sprite.png-0b2f0020291c928bcee8732456b53b72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/temp_test_house sprite.png"
-dest_files=["res://.godot/imported/temp_test_house sprite.png-482f7a8ebafac20d4e2bdce899227c73.ctex"]
+source_file="res://levels/test_polygon/sprites/temp_test_house sprite.png"
+dest_files=["res://.godot/imported/temp_test_house sprite.png-0b2f0020291c928bcee8732456b53b72.ctex"]
 
 [params]
 
