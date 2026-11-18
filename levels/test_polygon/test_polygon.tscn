@@ -1,15 +1,11 @@
 [gd_scene format=4 uid="uid://bd7of2omlhj1y"]
 
-[ext_resource type="Script" uid="uid://dyqj073d412s3" path="res://levels/effects/threshold/effect_for_static_body.gd" id="1_gepml"]
-[ext_resource type="Texture2D" uid="uid://cd3rpqeq0invc" path="res://levels/test_polygon/sprites/temp_test_house sprite.png" id="2_gepml"]
+[ext_resource type="PackedScene" uid="uid://bel8bhoefbuox" path="res://levels/test_polygon/house/house.tscn" id="1_2ki75"]
 [ext_resource type="PackedScene" uid="uid://c4fpdahw8galr" path="res://player/player.tscn" id="3_fiuai"]
 [ext_resource type="PackedScene" uid="uid://dbu2u1t5oqesg" path="res://enemies/dummy.tscn" id="4_mwfb5"]
 [ext_resource type="Texture2D" uid="uid://dbjr2bl8fb3n7" path="res://levels/test_polygon/atlas/atlas.png" id="5_gepml"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q4ady"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oul6g"]
-size = Vector2(122.41666, 23.83926)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qs5ye"]
 load_path = "res://.godot/imported/ground_tile.png-f19a6e5958140caa6434c9123a34ff59.ctex"
@@ -46,6 +42,11 @@ sources/2 = SubResource("TileSetAtlasSource_gepml")
 
 [node name="test_polygon" type="Node2D" unique_id=1268673865]
 
+[node name="house" parent="." unique_id=1169891165 node_paths=PackedStringArray("character", "enemy") instance=ExtResource("1_2ki75")]
+position = Vector2(-252, -84)
+character = NodePath("../player")
+enemy = NodePath("../Dummy")
+
 [node name="bariers" type="StaticBody2D" parent="." unique_id=1681456185]
 
 [node name="forward_barier" type="CollisionShape2D" parent="bariers" unique_id=1244592473]
@@ -68,28 +69,10 @@ position = Vector2(533, 10)
 scale = Vector2(0.9402685, -40.332466)
 shape = SubResource("RectangleShape2D_q4ady")
 
-[node name="house" type="StaticBody2D" parent="." unique_id=1074641134 node_paths=PackedStringArray("character")]
-script = ExtResource("1_gepml")
-character = NodePath("../player")
-
-[node name="house_ai_sprite" type="Sprite2D" parent="house" unique_id=1044923073]
-z_index = 3
-position = Vector2(-204, -257.00003)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_gepml")
-
-[node name="house_collision" type="CollisionShape2D" parent="house" unique_id=17017946]
-position = Vector2(-200.5, -174.5)
-scale = Vector2(1.3641936, 1.2164799)
-shape = SubResource("RectangleShape2D_oul6g")
-
-[node name="effect_trigger_threshold" type="Node2D" parent="house" unique_id=1168874922]
-position = Vector2(-198, -186)
-
 [node name="player" parent="." unique_id=9046938 instance=ExtResource("3_fiuai")]
 
 [node name="Dummy" parent="." unique_id=481085084 instance=ExtResource("4_mwfb5")]
-position = Vector2(41, -188)
+position = Vector2(67, -289)
 
 [node name="level_design" type="Node" parent="." unique_id=1709808127]
 

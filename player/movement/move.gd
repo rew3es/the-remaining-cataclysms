@@ -1,16 +1,17 @@
 class_name player_move
 extends CharacterBody2D
-@export var speed = 300  #скорость игрока - 300 едениц
+@export var speed = 500  #скорость игрока - 300 едениц
 @export var character: Sprite2D
+static var direction: Vector2
+var sprite_direction: Vector2
 func _physics_process(delta: float) -> void:
-	var direction = Input.get_vector(
+	direction = Input.get_vector(
 		"move_player_left", "move_player_right",
 		"move_player_forward", "move_player_back"
 	)
-	var sprite_direction = Input.get_vector(
+	sprite_direction = Input.get_vector(
 		"move_player_left", "move_player_right", "move_player_forward", "move_player_back"
 	)
-
 	match sprite_direction:
 		Vector2.LEFT:
 			print("Идём влево")
@@ -27,3 +28,15 @@ func _physics_process(delta: float) -> void:
 		
 	velocity = direction * speed
 	move_and_slide()
+static func move(frames: int, speed: int, tree: SceneTree, player: CharacterBody2D):
+	var frame: int = 1
+	direction = Input.get_vector(
+		"move_player_left", "move_player_right",
+		"move_player_forward", "move_player_back"
+	)
+	while frame <= frames:
+		player.velocity = direction * speed
+		player.move_and_slide()
+		await tree.process_frame
+		frame += 1
+	

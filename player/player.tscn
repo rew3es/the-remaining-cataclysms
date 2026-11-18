@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c4fpdahw8galr"]
 
-[ext_resource type="Script" uid="uid://bektb0hi2euxj" path="res://player/move.gd" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://bektb0hi2euxj" path="res://player/movement/move.gd" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://drqrjrigsia03" path="res://player/sprites_change.gd" id="2_g1dw6"]
 [ext_resource type="Script" uid="uid://pqfdu33e0kch" path="res://common/Hitbox.gd" id="2_rkbax"]
 
@@ -15,6 +15,7 @@ script = ExtResource("1_oul6g")
 character = NodePath("Sprite")
 
 [node name="camera" type="Camera2D" parent="." unique_id=1296266033 node_paths=PackedStringArray("sprite")]
+position_smoothing_enabled = true
 script = ExtResource("2_g1dw6")
 sprite = NodePath("../Sprite")
 

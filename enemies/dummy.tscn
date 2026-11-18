@@ -94,10 +94,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pq2v"]
-size = Vector2(113, 121)
+size = Vector2(113, 20.300003)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xct66"]
-size = Vector2(119, 127)
+size = Vector2(111.99999, 119.2)
 
 [node name="Dummy" type="CharacterBody2D" unique_id=481085084]
 collision_layer = 4
@@ -106,6 +106,8 @@ motion_mode = 1
 script = ExtResource("1_eqjt0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1494760421]
+z_index = 3
+scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_4pq2v")
 animation = &"idle"
 autoplay = "idle"
@@ -113,7 +115,8 @@ frame = 18
 frame_progress = 0.770397
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=869045940]
-position = Vector2(0.5, 4.5)
+position = Vector2(0.5, 130.375)
+scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_4pq2v")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=833816414]
@@ -123,7 +126,9 @@ script = ExtResource("2_fot1n")
 metadata/_custom_type_script = "uid://cvr1vungcdpkv"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1571007093]
-position = Vector2(0.5, 4.5)
+z_index = 3
+position = Vector2(-1.9073486e-06, 8.999998)
+scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_xct66")
 
 [node name="HealthSystem" parent="." unique_id=2017475754 node_paths=PackedStringArray("hurtbox", "health_bar") instance=ExtResource("3_aomga")]
@@ -132,10 +137,11 @@ hurtbox = NodePath("../Hurtbox")
 health_bar = NodePath("../ProgressBar")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=588924273]
-offset_left = -59.0
-offset_top = -72.0
-offset_right = 60.0
-offset_bottom = -66.0
+offset_left = -145.0
+offset_top = -178.0
+offset_right = -26.0
+offset_bottom = -172.0
+scale = Vector2(2.5221586, 3)
 show_percentage = false
 
 [node name="DamageNumberSpawner" type="Node2D" parent="." unique_id=604121068 node_paths=PackedStringArray("health_system")]
