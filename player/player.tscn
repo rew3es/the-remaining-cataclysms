@@ -10,7 +10,6 @@ radius = 4.9999995
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1dw6"]
 
 [node name="player" type="CharacterBody2D" unique_id=9046938 node_paths=PackedStringArray("character")]
-z_index = 3
 script = ExtResource("1_oul6g")
 character = NodePath("Sprite")
 
@@ -36,5 +35,4 @@ metadata/_custom_type_script = "uid://pqfdu33e0kch"
 shape = SubResource("RectangleShape2D_g1dw6")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=377353106]
-z_index = 2
 position = Vector2(0, -60)

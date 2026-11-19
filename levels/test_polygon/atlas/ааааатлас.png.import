@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd3rpqeq0invc"
-path="res://.godot/imported/temp_test_house sprite.png-0b2f0020291c928bcee8732456b53b72.ctex"
+uid="uid://dsttmdd7r6hla"
+path="res://.godot/imported/ааааатлас.png-281b23a9d90cf76c8dfbdae74040fbfd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/test_polygon/sprites/temp_test_house sprite.png"
-dest_files=["res://.godot/imported/temp_test_house sprite.png-0b2f0020291c928bcee8732456b53b72.ctex"]
+source_file="res://levels/test_polygon/atlas/ааааатлас.png"
+dest_files=["res://.godot/imported/ааааатлас.png-281b23a9d90cf76c8dfbdae74040fbfd.ctex"]
 
 [params]
 

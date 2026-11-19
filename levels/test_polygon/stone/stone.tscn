@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d2w5xkawgfuhm"]
+
+[ext_resource type="Texture2D" uid="uid://bgw5a5ctttn3e" path="res://levels/test_polygon/stone/stone.png" id="1_4h1is"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lka6g"]
+size = Vector2(226, 30.25)
+
+[node name="stone" type="StaticBody2D" unique_id=1340643961]
+
+[node name="stone_sprite" type="Sprite2D" parent="." unique_id=1151950533]
+position = Vector2(25, -80)
+texture = ExtResource("1_4h1is")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1163073545]
+position = Vector2(7, 22.875)
+shape = SubResource("RectangleShape2D_lka6g")

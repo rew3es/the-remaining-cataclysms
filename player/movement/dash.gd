@@ -4,7 +4,7 @@ var player: CharacterBody2D
 
 func _ready():
 	await get_tree().process_frame
-	player = get_tree().current_scene.get_node("player")
+	player = get_tree().current_scene.get_node("sort_object/player")
 
 var can_dash: bool = true
 func _physics_process(delta: float) -> void:
