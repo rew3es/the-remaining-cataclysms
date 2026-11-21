@@ -38,3 +38,6 @@ $RECYCLE.BIN/
 *.swp
 *.swo
 *~
+
+# ignore tmp files
+*.tmp
