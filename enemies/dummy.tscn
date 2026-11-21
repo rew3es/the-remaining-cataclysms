@@ -147,8 +147,8 @@ scale = Vector2(2.5221586, 3)
 show_percentage = false
 
 [node name="DamageNumberSpawner" type="Node2D" parent="." unique_id=604121068 node_paths=PackedStringArray("health_system")]
-position = Vector2(-2, -187)
+position = Vector2(-1, -341)
 script = ExtResource("4_fot1n")
 health_system = NodePath("../HealthSystem")
-font_size = 16
+font_size = 64
 metadata/_custom_type_script = "uid://dbv0tsravlwwk"

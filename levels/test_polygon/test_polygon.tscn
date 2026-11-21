@@ -189,6 +189,8 @@ position = Vector2(1215, -357)
 
 [node name="player" parent="sort_object" unique_id=9046938 groups=["effect"] instance=ExtResource("3_fiuai")]
 position = Vector2(626, 309)
+collision_layer = 2
+collision_mask = 5
 
 [node name="stone" parent="sort_object" unique_id=1340643961 instance=ExtResource("8_mwfb5")]
 position = Vector2(1211, 170)
