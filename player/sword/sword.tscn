@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://j32ivn7d2nhr" path="res://player/sword/sword.gd" id="1_spjsr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spjsr"]
-size = Vector2(58, 116)
+size = Vector2(81, 160)
 
 [node name="Sword" type="Node2D" unique_id=478413639]
 script = ExtResource("1_spjsr")
@@ -18,12 +18,5 @@ damage = 15
 metadata/_custom_type_script = "uid://pqfdu33e0kch"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1135239284]
-position = Vector2(0, -48)
+position = Vector2(0.5, -43)
 shape = SubResource("RectangleShape2D_spjsr")
-
-[node name="ColorRect" type="ColorRect" parent="Hitbox" unique_id=97488615]
-offset_left = -29.0
-offset_top = -106.0
-offset_right = 30.0
-offset_bottom = 10.0
-color = Color(0.039215688, 0.47843137, 1, 1)

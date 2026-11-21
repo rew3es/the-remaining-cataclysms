@@ -9,6 +9,9 @@ var is_invincible: bool = false
 
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
+	await get_tree().physics_frame
+	for area in get_overlapping_areas(): # get_overlapping_areas возвращает список пересекающих area2D
+		_on_area_entered(area)
 	
 func _on_area_entered(area: Area2D) -> void:
 	if is_invincible or not (area is Hitbox):

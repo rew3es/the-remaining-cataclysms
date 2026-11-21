@@ -1,32 +1,23 @@
 class_name player_move
 extends CharacterBody2D
 @export var speed = 500  #скорость игрока - 300 едениц
-@export var character: Sprite2D
+@export var character: AnimatedSprite2D
 static var direction: Vector2
 var sprite_direction: Vector2
+func _ready() -> void:
+	character.play("idle")
 func _physics_process(delta: float) -> void:
 	direction = Input.get_vector(
 		"move_player_left", "move_player_right",
 		"move_player_forward", "move_player_back"
 	)
-	sprite_direction = Input.get_vector(
-		"move_player_left", "move_player_right", "move_player_forward", "move_player_back"
-	)
-	match sprite_direction:
-		Vector2.LEFT:
-			print("Идём влево")
-			sprite_change.set_direction(character, "left")
-		Vector2.RIGHT:
-			print("Идём вправо")
-			sprite_change.set_direction(character, "right")
-		Vector2.UP:
-			print("Идём вперёд")
-			sprite_change.set_direction(character, "front")
-		Vector2.DOWN:
-			print("Идём назад")
-			sprite_change.set_direction(character, "back")
-		
 	velocity = direction * speed
+	if Input.is_action_pressed("move_player_left") or Input.is_action_pressed("move_player_right") or Input.is_action_pressed("move_player_back") or Input.is_action_pressed("move_player_forward"):
+		if !sword.is_attack_now:
+			character.play("walk")
+	else:
+		if !sword.is_attack_now:
+			character.play("idle")
 	move_and_slide()
 static func move(frames: int, speed: int, tree: SceneTree, player: CharacterBody2D):
 	var frame: int = 1

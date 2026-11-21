@@ -1,20 +1,178 @@
 [gd_scene format=3 uid="uid://c4fpdahw8galr"]
 
 [ext_resource type="Script" uid="uid://bektb0hi2euxj" path="res://player/movement/move.gd" id="1_oul6g"]
-[ext_resource type="Script" uid="uid://drqrjrigsia03" path="res://player/sprites_change.gd" id="2_g1dw6"]
+[ext_resource type="Texture2D" uid="uid://cni4glvr5mq8n" path="res://player/персонаж/атака/перс_0001.png" id="3_1s1yo"]
 [ext_resource type="PackedScene" uid="uid://c36qrlydhvyw5" path="res://player/sword/sword.tscn" id="3_g1dw6"]
+[ext_resource type="Texture2D" uid="uid://cubu8s16a8dbh" path="res://player/персонаж/атака/перс_0003.png" id="5_jd2rm"]
+[ext_resource type="Texture2D" uid="uid://btk61dtdr4eid" path="res://player/персонаж/атака/перс_0005.png" id="7_ge24q"]
+[ext_resource type="Texture2D" uid="uid://c1f3lyjhdmcqt" path="res://player/персонаж/атака/перс_0006.png" id="8_pnw6m"]
+[ext_resource type="Texture2D" uid="uid://q6f77p6lip3r" path="res://player/персонаж/атака/перс_0007.png" id="9_1so5t"]
+[ext_resource type="Texture2D" uid="uid://c8njrlxy0vgxu" path="res://player/персонаж/атака/перс_0008.png" id="10_55jnj"]
+[ext_resource type="Texture2D" uid="uid://i0w8fcfhjk6i" path="res://player/персонаж/атака/перс_0009.png" id="11_dx5ib"]
+[ext_resource type="Texture2D" uid="uid://dg0s508xuvq3w" path="res://player/персонаж/атака/перс_0010.png" id="12_a2xo5"]
+[ext_resource type="Texture2D" uid="uid://dpxa3nsd2cxk8" path="res://player/персонаж/атака/перс_0011.png" id="13_art4l"]
+[ext_resource type="Texture2D" uid="uid://dhwy64y6vlutc" path="res://player/персонаж/атака/перс_0012.png" id="14_fjxoa"]
+[ext_resource type="Texture2D" uid="uid://dt2lvemyuxqgk" path="res://player/персонаж/атака/перс_0013.png" id="15_gswnw"]
+[ext_resource type="Texture2D" uid="uid://dyeuq0hit5ma5" path="res://player/персонаж/атака/перс_0014.png" id="16_xcnuv"]
+[ext_resource type="Texture2D" uid="uid://et7bvvetja8q" path="res://player/персонаж/атака/перс_0015.png" id="17_j55il"]
+[ext_resource type="Texture2D" uid="uid://c7xrxchc7824q" path="res://player/персонаж/атака/перс_0016.png" id="18_hjies"]
+[ext_resource type="Texture2D" uid="uid://bk6cla1fqiaqv" path="res://player/персонаж/атака/перс_0017.png" id="19_mmwog"]
+[ext_resource type="Texture2D" uid="uid://bbt0npu70m3gl" path="res://player/персонаж/атака/перс_0018.png" id="20_8pxes"]
+[ext_resource type="Texture2D" uid="uid://l0mw2g61jnpa" path="res://player/персонаж/idle/перс_0001.png" id="20_pnw6m"]
+[ext_resource type="Texture2D" uid="uid://d3pt4tyr045do" path="res://player/персонаж/idle/перс_0002.png" id="21_1so5t"]
+[ext_resource type="Texture2D" uid="uid://cbpd03lrcrfu0" path="res://player/персонаж/атака/перс_0019.png" id="21_fmu53"]
+[ext_resource type="Texture2D" uid="uid://cqc28tnliwxts" path="res://player/персонаж/idle/перс_0003.png" id="22_55jnj"]
+[ext_resource type="Texture2D" uid="uid://blw4tjo27v0p5" path="res://player/персонаж/ходьба/перс_0001.png" id="22_w7j2h"]
+[ext_resource type="Texture2D" uid="uid://dlx4yryaji8rn" path="res://player/персонаж/idle/перс_0004.png" id="23_dx5ib"]
+[ext_resource type="Texture2D" uid="uid://dss40eia76fy5" path="res://player/персонаж/ходьба/перс_0002.png" id="23_n0b8q"]
+[ext_resource type="Texture2D" uid="uid://by7wofsrrj16r" path="res://player/персонаж/idle/перс_0005.png" id="24_a2xo5"]
+[ext_resource type="Texture2D" uid="uid://dl6xt1mjvwqce" path="res://player/персонаж/ходьба/перс_0003.png" id="24_jfgyi"]
+[ext_resource type="Texture2D" uid="uid://ih6l3lb7f5nu" path="res://player/персонаж/ходьба/перс_0004.png" id="25_237xx"]
+[ext_resource type="Texture2D" uid="uid://qddha2dpw44f" path="res://player/персонаж/idle/перс_0006.png" id="25_art4l"]
+[ext_resource type="Texture2D" uid="uid://l6pt5lq18o1k" path="res://player/персонаж/idle/перс_0007.png" id="26_fjxoa"]
+[ext_resource type="Texture2D" uid="uid://crtmgssi2hc1p" path="res://player/персонаж/ходьба/перс_0005.png" id="26_wpyo2"]
+[ext_resource type="Texture2D" uid="uid://cal5irrnywcy5" path="res://player/персонаж/ходьба/перс_0006.png" id="27_7crtr"]
+[ext_resource type="Texture2D" uid="uid://v23msvqn4f3o" path="res://player/персонаж/ходьба/перс_0007.png" id="28_vgvch"]
+[ext_resource type="Texture2D" uid="uid://b50vyqskddupf" path="res://player/персонаж/ходьба/перс_0008.png" id="29_a1u5o"]
+[ext_resource type="Texture2D" uid="uid://c3fsdy18i8kyh" path="res://player/персонаж/ходьба/перс_0009.png" id="30_3dxkp"]
+[ext_resource type="Texture2D" uid="uid://bo34nv38j0e6e" path="res://player/персонаж/ходьба/перс_0010.png" id="31_6wior"]
+[ext_resource type="Texture2D" uid="uid://ck1a71vqtxkk0" path="res://player/персонаж/ходьба/перс_0011.png" id="32_p5tca"]
+
+[sub_resource type="GDScript" id="GDScript_jbx34"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pby22"]
 radius = 4.9999995
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_lka6g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1s1yo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jd2rm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ge24q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pnw6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1so5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_55jnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dx5ib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_a2xo5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_art4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fjxoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_gswnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xcnuv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_j55il")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_hjies")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_mmwog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_8pxes")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_fmu53")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 45.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_pnw6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1so5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_55jnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_dx5ib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_a2xo5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_art4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_fjxoa")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_w7j2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_n0b8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_jfgyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_237xx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_wpyo2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_7crtr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_vgvch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_a1u5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_3dxkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_6wior")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_p5tca")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 15.0
+}]
+
 [node name="player" type="CharacterBody2D" unique_id=9046938 node_paths=PackedStringArray("character")]
 script = ExtResource("1_oul6g")
-character = NodePath("Sprite")
+character = NodePath("AnimatedSprite2D")
 
-[node name="camera" type="Camera2D" parent="." unique_id=1296266033 node_paths=PackedStringArray("sprite")]
+[node name="camera" type="Camera2D" parent="." unique_id=1296266033]
 position_smoothing_enabled = true
-script = ExtResource("2_g1dw6")
-sprite = NodePath("../Sprite")
+script = SubResource("GDScript_jbx34")
 
 [node name="player_collision" type="CollisionShape2D" parent="." unique_id=802244932]
 position = Vector2(-1, 16.999998)
@@ -24,6 +182,15 @@ shape = SubResource("CircleShape2D_pby22")
 [node name="Sprite" type="Sprite2D" parent="." unique_id=377353106]
 position = Vector2(0, -60)
 
-[node name="Sword" parent="." unique_id=478413639 instance=ExtResource("3_g1dw6")]
-position = Vector2(-76, -97)
-rotation = 1.5702772
+[node name="Sword" parent="." unique_id=478413639 node_paths=PackedStringArray("character") instance=ExtResource("3_g1dw6")]
+position = Vector2(10, 136)
+rotation = 1.5707964
+character = NodePath("../AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=895311928]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_lka6g")
+animation = &"idle"
+frame = 1
+frame_progress = 0.40804243
