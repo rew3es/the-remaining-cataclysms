@@ -2,12 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bektb0hi2euxj" path="res://player/movement/move.gd" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://drqrjrigsia03" path="res://player/sprites_change.gd" id="2_g1dw6"]
-[ext_resource type="Script" uid="uid://pqfdu33e0kch" path="res://common/Hitbox.gd" id="2_rkbax"]
+[ext_resource type="PackedScene" uid="uid://c36qrlydhvyw5" path="res://player/sword/sword.tscn" id="3_g1dw6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pby22"]
 radius = 4.9999995
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1dw6"]
 
 [node name="player" type="CharacterBody2D" unique_id=9046938 node_paths=PackedStringArray("character")]
 script = ExtResource("1_oul6g")
@@ -23,16 +21,9 @@ position = Vector2(-1, 16.999998)
 scale = Vector2(-4.0542574, 1.3251656)
 shape = SubResource("CircleShape2D_pby22")
 
-[node name="Hitbox" type="Area2D" parent="." unique_id=1006607698]
-position = Vector2(0, -27)
-collision_layer = 32
-collision_mask = 16
-script = ExtResource("2_rkbax")
-damage = 15
-metadata/_custom_type_script = "uid://pqfdu33e0kch"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1038672566]
-shape = SubResource("RectangleShape2D_g1dw6")
-
 [node name="Sprite" type="Sprite2D" parent="." unique_id=377353106]
 position = Vector2(0, -60)
+
+[node name="Sword" parent="." unique_id=478413639 instance=ExtResource("3_g1dw6")]
+position = Vector2(-76, -97)
+rotation = 1.5702772
