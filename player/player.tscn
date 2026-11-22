@@ -175,8 +175,8 @@ position_smoothing_enabled = true
 script = SubResource("GDScript_jbx34")
 
 [node name="player_collision" type="CollisionShape2D" parent="." unique_id=802244932]
-position = Vector2(-1, 16.999998)
-scale = Vector2(-4.0542574, 1.3251656)
+position = Vector2(0, 31)
+scale = Vector2(-9.529907, 2.204301)
 shape = SubResource("CircleShape2D_pby22")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=377353106]
@@ -189,6 +189,7 @@ character = NodePath("../AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=895311928]
 texture_filter = 1
+position = Vector2(14, -37)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_lka6g")
 animation = &"idle"

@@ -31,21 +31,11 @@ func _stop_attack():
 	is_attack_now = false
 	
 func _move_hitbox():
-	if !GameSettings.use_mouse:
-		if Input.is_action_pressed("move_player_forward"):
-			await _attack_forward()
-		elif Input.is_action_pressed("move_player_back"):
-			await _attack_back()
-		elif Input.is_action_pressed("move_player_right"):
-			await _attack_right()
-		elif Input.is_action_pressed("move_player_left"):
-			await _attack_left()
-	elif GameSettings.use_mouse:
-		match _mouse_possition_detect():
-			"right": await _attack_right()
-			"left": await _attack_left()
-			"down": await _attack_back()
-			"up": await _attack_forward()
+	match _mouse_possition_detect():
+		"right": await _attack_right()
+		"left": await _attack_left()
+		"down": await _attack_back()
+		"up": await _attack_forward()
 
 func _mouse_possition_detect():
 	var mouse_possition = get_viewport().get_mouse_position() # вектор позиции мышки 

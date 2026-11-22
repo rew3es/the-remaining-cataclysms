@@ -11,14 +11,9 @@ config_version=5
 [application]
 
 config/name="The Remaining Cataclysms"
-run/main_scene="uid://dk8p4tyolje3b"
+run/main_scene="uid://bd7of2omlhj1y"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
-
-[autoload]
-
-Dash="*uid://bganf7bfhshk"
-GameSettings="*uid://vw4gubjbjpo2"
 
 [display]
 

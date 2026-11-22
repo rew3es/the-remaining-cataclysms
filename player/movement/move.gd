@@ -19,14 +19,14 @@ func _physics_process(delta: float) -> void:
 		if !sword.is_attack_now:
 			character.play("idle")
 	move_and_slide()
-static func move(frames: int, speed: int, tree: SceneTree, player: CharacterBody2D):
+static func move(frames: int, speed_2: int, tree: SceneTree, player: CharacterBody2D):
 	var frame: int = 1
 	direction = Input.get_vector(
 		"move_player_left", "move_player_right",
 		"move_player_forward", "move_player_back"
 	)
 	while frame <= frames:
-		player.velocity = direction * speed
+		player.velocity = direction * speed_2
 		player.move_and_slide()
 		await tree.process_frame
 		frame += 1
