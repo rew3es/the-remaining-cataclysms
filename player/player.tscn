@@ -183,7 +183,7 @@ shape = SubResource("CircleShape2D_pby22")
 position = Vector2(0, -60)
 
 [node name="Sword" parent="." unique_id=478413639 node_paths=PackedStringArray("character") instance=ExtResource("3_g1dw6")]
-position = Vector2(10, 136)
+position = Vector2(-75, 1)
 rotation = 1.5707964
 character = NodePath("../AnimatedSprite2D")
 
