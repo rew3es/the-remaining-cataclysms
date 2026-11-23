@@ -163,7 +163,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"walk",
-"speed": 15.0
+"speed": 45.0
 }]
 
 [node name="player" type="CharacterBody2D" unique_id=9046938 node_paths=PackedStringArray("character")]
@@ -192,6 +192,4 @@ texture_filter = 1
 position = Vector2(14, -37)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_lka6g")
-animation = &"idle"
-frame = 1
-frame_progress = 0.40804243
+animation = &"walk"
