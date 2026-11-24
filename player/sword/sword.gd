@@ -3,7 +3,7 @@ class_name Sword
 enum Attack_type{FAST, POWERFUL}
 @onready var hitbox: Hitbox = $Hitbox
 signal sword_attacked(attack_type: Attack_type)
- 
+
 
 
 

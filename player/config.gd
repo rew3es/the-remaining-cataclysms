@@ -11,7 +11,7 @@ class_name player_config
 #рывок из скрипта "res://player/movement/dash.gd"
 @export var dash_speed = 1500
 @export var dash_frames = 10 #количество кадров которое будет совершаться рывок
-@export var dash_cooldowm: float = 0.5
+@export var dash_cooldown: float = 0.5
 
 #передвижение из скрипта "res://player/movement/move.gd"
 

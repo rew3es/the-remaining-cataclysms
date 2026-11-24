@@ -2,10 +2,10 @@ class_name player_move
 extends CharacterBody2D
 @onready var speed = PLAYER_CONFIG.move_speed  #скорость игрока - 500 едениц
 @export var character: AnimatedSprite2D
-static var is_dashing: bool = false
-static var direction: Vector2
+@onready var is_dashing: bool = false
+@onready var direction: Vector2
 
-static var keybinds_controls = {
+@onready var keybinds_controls = {
 	"w": "move_player_forward",
 	"a": "move_player_left",
 	"s": "move_player_back",
@@ -22,21 +22,17 @@ func _physics_process(_delta: float) -> void:
 		"move_player_forward", "move_player_back"
 	)
 	velocity = direction * speed
-	if Input.is_action_pressed("move_player_left") or Input.is_action_pressed("move_player_right") or Input.is_action_pressed("move_player_back") or Input.is_action_pressed("move_player_forward"):
-		if !SwordLogic.is_attack_now:
-			character.play("walk")
-	else:
-		if !SwordLogic.is_attack_now:
-			character.play("idle")
+	
 	move_and_slide()
 	
 
-static func _mouse_direction(player: CharacterBody2D) -> Vector2:
+
+func _mouse_direction(player: CharacterBody2D) -> Vector2:
 	var mouse_position = player.get_global_mouse_position()
 	var direction_move = mouse_position - player.global_position
 	return direction_move.normalized()
 
-static func move(frames: int, speed_2: int, tree: SceneTree, player: CharacterBody2D, direction_mouse: bool):
+func move(frames: int, speed_2: int, tree: SceneTree, player: CharacterBody2D, direction_mouse: bool):
 	is_dashing = true
 	var frame: int = 1
 
