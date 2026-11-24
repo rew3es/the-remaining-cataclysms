@@ -23,10 +23,10 @@ func _physics_process(_delta: float) -> void:
 	)
 	velocity = direction * speed
 	if Input.is_action_pressed("move_player_left") or Input.is_action_pressed("move_player_right") or Input.is_action_pressed("move_player_back") or Input.is_action_pressed("move_player_forward"):
-		if !Sword.is_attack_now:
+		if !SwordLogic.is_attack_now:
 			character.play("walk")
 	else:
-		if !Sword.is_attack_now:
+		if !SwordLogic.is_attack_now:
 			character.play("idle")
 	move_and_slide()
 	
