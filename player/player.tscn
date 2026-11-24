@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c4fpdahw8galr"]
 
 [ext_resource type="Script" uid="uid://bektb0hi2euxj" path="res://player/movement/move.gd" id="1_oul6g"]
-[ext_resource type="Script" uid="uid://6ikqpx0u6pow" path="res://common/camera_control/camera_rotation.gd" id="2_55jnj"]
 [ext_resource type="Texture2D" uid="uid://cni4glvr5mq8n" path="res://player/персонаж/атака/перс_0001.png" id="3_1s1yo"]
 [ext_resource type="PackedScene" uid="uid://c36qrlydhvyw5" path="res://player/sword/sword.tscn" id="3_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://cubu8s16a8dbh" path="res://player/персонаж/атака/перс_0003.png" id="5_jd2rm"]
@@ -173,7 +172,6 @@ character = NodePath("AnimatedSprite2D")
 [node name="camera" type="Camera2D" parent="." unique_id=1296266033]
 ignore_rotation = false
 position_smoothing_enabled = true
-script = ExtResource("2_55jnj")
 
 [node name="player_collision" type="CollisionShape2D" parent="." unique_id=802244932]
 position = Vector2(0, 31)

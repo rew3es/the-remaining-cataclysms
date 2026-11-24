@@ -1,11 +1,19 @@
 extends Node2D
-class_name sword
+class_name Sword
+
+
+
+
 @onready var Hitbox_collision: CollisionShape2D = $Hitbox/CollisionShape2D
 @onready var hitbox: Hitbox = $Hitbox
 @export var character: AnimatedSprite2D
 static var is_attack_now: bool = false
 var can_attack: bool = true
-
+enum Attack_type{
+	FAST,
+	POWERFUL
+}
+signal sword_attacked(attack_type: Attack_type)
  
 
 
@@ -14,12 +22,16 @@ func _ready() -> void:
 	hitbox.damage = 15
 func _input(event: InputEvent) -> void:
 		if event.is_action_pressed("fast_attack_key") and can_attack and not event.is_echo():
+			sword_attacked.emit(Attack_type.FAST)
 			_attack_config(150, 15)
 			_attack_procces("fast")
+			
 		if event.is_action_pressed("powerful_attack_key") and can_attack and not event.is_echo():
+			sword_attacked.emit(Attack_type.POWERFUL)
 			_attack_config(400, 30)
 			_attack_procces("powerful")
 			
+
 func _attack_procces(type: String): #основной метод атаки, который вызывает второстепенные + таймер 
 	_start_attack()
 	_disable(false)

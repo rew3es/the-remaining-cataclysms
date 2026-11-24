@@ -18,15 +18,15 @@ func _physics_process(_delta: float) -> void:
 	if is_dashing:
 		return
 	direction = Input.get_vector(
-		keybinds_controls["a"], keybinds_controls["d"],
-		keybinds_controls["w"], keybinds_controls["s"]
+		"move_player_left", "move_player_right",
+		"move_player_forward", "move_player_back"
 	)
 	velocity = direction * speed
 	if Input.is_action_pressed("move_player_left") or Input.is_action_pressed("move_player_right") or Input.is_action_pressed("move_player_back") or Input.is_action_pressed("move_player_forward"):
-		if !sword.is_attack_now:
+		if !Sword.is_attack_now:
 			character.play("walk")
 	else:
-		if !sword.is_attack_now:
+		if !Sword.is_attack_now:
 			character.play("idle")
 	move_and_slide()
 	
@@ -54,30 +54,3 @@ static func move(frames: int, speed_2: int, tree: SceneTree, player: CharacterBo
 		frame += 1
 		await tree.physics_frame
 	is_dashing = false
-
-static func swap_horizontal_controls():
-	var temp_key = keybinds_controls["a"]
-	keybinds_controls["a"] = keybinds_controls["d"]
-	keybinds_controls["d"] = temp_key
-
-static func swap_vertical_controls():
-	var temp_key = keybinds_controls["w"]
-	keybinds_controls["w"] = keybinds_controls["s"]
-	keybinds_controls["s"] = temp_key
-
-static func swap_vertical_and_horizontal_controls():
-	var temp_key = keybinds_controls["d"]
-	var temp_key_2 = keybinds_controls["a"]
-	keybinds_controls["d"] = keybinds_controls["s"]
-	keybinds_controls["s"] = temp_key
-	
-	keybinds_controls["a"] = keybinds_controls["w"]
-	keybinds_controls["w"] = temp_key_2
-
-static func set_default_controls():
-	keybinds_controls = {
-		"w": "move_player_forward",
-		"a": "move_player_left",
-		"s": "move_player_back",
-		"d": "move_player_right",
-	}

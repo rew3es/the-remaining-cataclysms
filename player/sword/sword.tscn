@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://pqfdu33e0kch" path="res://common/Hitbox.gd" id="1_qnclt"]
 [ext_resource type="Script" uid="uid://j32ivn7d2nhr" path="res://player/sword/sword.gd" id="1_spjsr"]
+[ext_resource type="Script" uid="uid://q88lp87t04m5" path="res://player/sword/sword_damage_logic.gd" id="3_1ck3f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spjsr"]
 size = Vector2(81, 160)
@@ -26,3 +27,6 @@ offset_left = -39.5
 offset_top = -83.0
 offset_right = 39.5
 offset_bottom = 80.0
+
+[node name="SwordComponent" type="Node" parent="." unique_id=1502887416]
+script = ExtResource("3_1ck3f")
