@@ -8,9 +8,9 @@ size = Vector2(191, 48.5)
 [node name="tree" type="StaticBody2D" unique_id=2036341668]
 
 [node name="tree" type="Sprite2D" parent="." unique_id=615323770]
-position = Vector2(16, -253)
 texture = ExtResource("1_yvdyc")
+centered = false
+offset = Vector2(-215, -650)
 
 [node name="tree_collision" type="CollisionShape2D" parent="." unique_id=1888233260]
-position = Vector2(-3.5, 38.25)
 shape = SubResource("RectangleShape2D_lka6g")

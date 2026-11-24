@@ -1,0 +1,18 @@
+extends Node
+class_name player_config
+
+# в этом файле все основные экспорты. 
+
+#общее
+
+@export var character_animate_sprite: AnimatedSprite2D
+
+
+#рывок из скрипта "res://player/movement/dash.gd"
+@export var dash_speed = 1500
+@export var dash_frames = 10 #количество кадров которое будет совершаться рывок
+@export var dash_cooldowm: float = 0.5
+
+#передвижение из скрипта "res://player/movement/move.gd"
+
+@export var move_speed = 500

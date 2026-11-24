@@ -177,10 +177,10 @@ y_sort_enabled = true
 position = Vector2(-625, -309)
 
 [node name="tree2" parent="sort_object" unique_id=1475755595 groups=["effect"] instance=ExtResource("1_fiuai")]
-position = Vector2(-124, 186)
+position = Vector2(-124, 175)
 
 [node name="tree" parent="sort_object" unique_id=2036341668 groups=["effect"] instance=ExtResource("1_fiuai")]
-position = Vector2(989, -88)
+position = Vector2(989, -99)
 
 [node name="house" parent="sort_object" unique_id=1169891165 groups=["effect"] instance=ExtResource("1_2ki75")]
 position = Vector2(114, -106)

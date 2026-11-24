@@ -15,7 +15,6 @@ collision_layer = 32
 collision_mask = 16
 script = ExtResource("1_qnclt")
 damage = 15
-knockback_force = 300.0
 metadata/_custom_type_script = "uid://pqfdu33e0kch"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1135239284]

@@ -1,15 +1,25 @@
 class_name player_move
 extends CharacterBody2D
-@export var speed = 500  #скорость игрока - 300 едениц
+@onready var speed = PLAYER_CONFIG.move_speed  #скорость игрока - 500 едениц
 @export var character: AnimatedSprite2D
+static var is_dashing: bool = false
 static var direction: Vector2
+
+static var keybinds_controls = {
+	"w": "move_player_forward",
+	"a": "move_player_left",
+	"s": "move_player_back",
+	"d": "move_player_right",
+}
 var sprite_direction: Vector2
 func _ready() -> void:
 	character.play("idle")
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
+	if is_dashing:
+		return
 	direction = Input.get_vector(
-		"move_player_left", "move_player_right",
-		"move_player_forward", "move_player_back"
+		keybinds_controls["a"], keybinds_controls["d"],
+		keybinds_controls["w"], keybinds_controls["s"]
 	)
 	velocity = direction * speed
 	if Input.is_action_pressed("move_player_left") or Input.is_action_pressed("move_player_right") or Input.is_action_pressed("move_player_back") or Input.is_action_pressed("move_player_forward"):
@@ -19,15 +29,55 @@ func _physics_process(delta: float) -> void:
 		if !sword.is_attack_now:
 			character.play("idle")
 	move_and_slide()
-static func move(frames: int, speed_2: int, tree: SceneTree, player: CharacterBody2D):
+	
+
+static func _mouse_direction(player: CharacterBody2D) -> Vector2:
+	var mouse_position = player.get_global_mouse_position()
+	var direction_move = mouse_position - player.global_position
+	return direction_move.normalized()
+
+static func move(frames: int, speed_2: int, tree: SceneTree, player: CharacterBody2D, direction_mouse: bool):
+	is_dashing = true
 	var frame: int = 1
-	direction = Input.get_vector(
-		"move_player_left", "move_player_right",
-		"move_player_forward", "move_player_back"
-	)
+
+	if !direction_mouse:
+		direction = Input.get_vector(
+			keybinds_controls["a"], keybinds_controls["d"],
+			keybinds_controls["w"], keybinds_controls["s"]
+		)
+	else: direction = _mouse_direction(player)
+		
+
 	while frame <= frames:
 		player.velocity = direction * speed_2
 		player.move_and_slide()
-		await tree.process_frame
 		frame += 1
+		await tree.physics_frame
+	is_dashing = false
+
+static func swap_horizontal_controls():
+	var temp_key = keybinds_controls["a"]
+	keybinds_controls["a"] = keybinds_controls["d"]
+	keybinds_controls["d"] = temp_key
+
+static func swap_vertical_controls():
+	var temp_key = keybinds_controls["w"]
+	keybinds_controls["w"] = keybinds_controls["s"]
+	keybinds_controls["s"] = temp_key
+
+static func swap_vertical_and_horizontal_controls():
+	var temp_key = keybinds_controls["d"]
+	var temp_key_2 = keybinds_controls["a"]
+	keybinds_controls["d"] = keybinds_controls["s"]
+	keybinds_controls["s"] = temp_key
 	
+	keybinds_controls["a"] = keybinds_controls["w"]
+	keybinds_controls["w"] = temp_key_2
+
+static func set_default_controls():
+	keybinds_controls = {
+		"w": "move_player_forward",
+		"a": "move_player_left",
+		"s": "move_player_back",
+		"d": "move_player_right",
+	}
