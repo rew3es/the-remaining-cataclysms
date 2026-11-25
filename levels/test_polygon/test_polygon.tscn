@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://bd7of2omlhj1y"]
 
 [ext_resource type="PackedScene" uid="uid://bel8bhoefbuox" path="res://levels/test_polygon/house/house.tscn" id="1_2ki75"]
-[ext_resource type="Script" uid="uid://bganf7bfhshk" path="res://player/movement/dash.gd" id="1_5bhgj"]
 [ext_resource type="PackedScene" uid="uid://dqlwkxaxssa4c" path="res://levels/test_polygon/tree/tree.tscn" id="1_fiuai"]
 [ext_resource type="PackedScene" uid="uid://c4fpdahw8galr" path="res://player/player.tscn" id="3_fiuai"]
 [ext_resource type="Texture2D" uid="uid://dsttmdd7r6hla" path="res://levels/test_polygon/atlas/ааааатлас.png" id="3_mwfb5"]
@@ -131,7 +130,6 @@ sources/1 = SubResource("TileSetAtlasSource_qs5ye")
 sources/5 = SubResource("TileSetAtlasSource_5bhgj")
 
 [node name="test_polygon" type="Node2D" unique_id=1268673865]
-script = ExtResource("1_5bhgj")
 
 [node name="bariers" type="StaticBody2D" parent="." unique_id=1681456185]
 

@@ -38,6 +38,8 @@
 [ext_resource type="Texture2D" uid="uid://bo34nv38j0e6e" path="res://player/sprites/walk/перс_0010.png" id="31_6wior"]
 [ext_resource type="Texture2D" uid="uid://ck1a71vqtxkk0" path="res://player/sprites/walk/перс_0011.png" id="32_p5tca"]
 [ext_resource type="Script" uid="uid://caux4528djvo8" path="res://player/config.gd" id="38_1so5t"]
+[ext_resource type="Script" uid="uid://bganf7bfhshk" path="res://player/movement/dash.gd" id="39_55jnj"]
+[ext_resource type="Script" uid="uid://cxp8uypmtalrr" path="res://player/sprites/player_animation_switch_system.gd" id="40_dx5ib"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pby22"]
 radius = 4.9999995
@@ -165,9 +167,7 @@ animations = [{
 "speed": 45.0
 }]
 
-[node name="player" type="CharacterBody2D" unique_id=9046938 node_paths=PackedStringArray("character")]
-script = ExtResource("1_oul6g")
-character = NodePath("AnimatedSprite2D")
+[node name="player" type="CharacterBody2D" unique_id=9046938]
 
 [node name="camera" type="Camera2D" parent="." unique_id=1296266033]
 ignore_rotation = false
@@ -178,14 +178,11 @@ position = Vector2(0, 31)
 scale = Vector2(-9.529907, 2.204301)
 shape = SubResource("CircleShape2D_pby22")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=377353106]
-position = Vector2(0, -60)
-
 [node name="Sword" parent="." unique_id=478413639 instance=ExtResource("3_g1dw6")]
 position = Vector2(-75, 1)
 rotation = 1.5707964
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=895311928]
+[node name="player_animation" type="AnimatedSprite2D" parent="." unique_id=895311928]
 texture_filter = 1
 position = Vector2(14, -37)
 scale = Vector2(3, 3)
@@ -194,4 +191,19 @@ animation = &"attack"
 
 [node name="CONFIG" type="Node" parent="." unique_id=1432507690 node_paths=PackedStringArray("character_animate_sprite")]
 script = ExtResource("38_1so5t")
-character_animate_sprite = NodePath("../AnimatedSprite2D")
+character_animate_sprite = NodePath("../player_animation")
+
+[node name="Movement" type="Node" parent="." unique_id=1579200286]
+
+[node name="DashComponent" type="Node" parent="Movement" unique_id=1752993060 node_paths=PackedStringArray("player", "move_component")]
+script = ExtResource("39_55jnj")
+player = NodePath("../..")
+move_component = NodePath("../MoveComponent")
+
+[node name="MoveComponent" type="Node" parent="Movement" unique_id=111077847 node_paths=PackedStringArray("Player", "player_animation")]
+script = ExtResource("1_oul6g")
+Player = NodePath("../..")
+player_animation = NodePath("../../player_animation")
+
+[node name="AnimationSwitcher" type="Node" parent="Movement/MoveComponent" unique_id=739447886]
+script = ExtResource("40_dx5ib")

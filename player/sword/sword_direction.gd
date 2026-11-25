@@ -52,5 +52,5 @@ func _attack_right(type: String):
 		"powerful": await _general_attack("x", 25, 0, 250, 90, 20)
 func _attack_left(type: String):
 	match type:
-		"fast": await sword_logic._general_attack("x", -15, 0, -150, 90, 10)
-		"powerful": await sword_logic._general_attack("x", -25, 0, -250, 90, 20)
+		"fast": await _general_attack("x", -15, 0, -150, 90, 10)
+		"powerful": await _general_attack("x", -25, 0, -250, 90, 20)

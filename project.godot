@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 PLAYER_CONFIG="*uid://caux4528djvo8"
-PlayerAnimationSwitchSystem="*uid://cxp8uypmtalrr"
 
 [display]
 

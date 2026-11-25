@@ -1,7 +1,8 @@
 class_name player_move
-extends CharacterBody2D
+extends Node
+@export var Player: CharacterBody2D
 @onready var speed = PLAYER_CONFIG.move_speed  #скорость игрока - 500 едениц
-@export var character: AnimatedSprite2D
+@export var player_animation: AnimatedSprite2D
 @onready var is_dashing: bool = false
 @onready var direction: Vector2
 
@@ -12,8 +13,7 @@ extends CharacterBody2D
 	"d": "move_player_right",
 }
 var sprite_direction: Vector2
-func _ready() -> void:
-	character.play("idle")
+
 func _physics_process(_delta: float) -> void:
 	if is_dashing:
 		return
@@ -21,9 +21,9 @@ func _physics_process(_delta: float) -> void:
 		"move_player_left", "move_player_right",
 		"move_player_forward", "move_player_back"
 	)
-	velocity = direction * speed
+	Player.velocity = direction * speed
 	
-	move_and_slide()
+	Player.move_and_slide()
 	
 
 
