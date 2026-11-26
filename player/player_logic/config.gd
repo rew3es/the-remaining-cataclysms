@@ -14,7 +14,6 @@ class_name player_config
 @export var dash_cooldown: float = 0.5
 @export var is_camera_position_smoothing_enabled = true
 @export var camera_position_smoothing_speed = 3
-@export var SwordDirection_script: String = "res://player/player_logic/sword/sword_direction.gd"
 #передвижение из скрипта "res://player/movement/move.gd"
 
 @export var move_speed = 500

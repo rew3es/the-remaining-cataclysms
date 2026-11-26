@@ -38,7 +38,6 @@
 [ext_resource type="Texture2D" uid="uid://bo34nv38j0e6e" path="res://player/player_logic/sprites/walk/перс_0010.png" id="31_6wior"]
 [ext_resource type="Texture2D" uid="uid://ck1a71vqtxkk0" path="res://player/player_logic/sprites/walk/перс_0011.png" id="32_p5tca"]
 [ext_resource type="Script" uid="uid://caux4528djvo8" path="res://player/player_logic/config.gd" id="38_1so5t"]
-[ext_resource type="Script" uid="uid://bsetxtwkd8vbm" path="res://player/player_logic/sword/sword_direction.gd" id="38_cq0io"]
 [ext_resource type="Script" uid="uid://bganf7bfhshk" path="res://player/player_logic/movement/dash.gd" id="39_55jnj"]
 [ext_resource type="Script" uid="uid://cxp8uypmtalrr" path="res://player/player_logic/sprites/player_animation_switch_system.gd" id="40_dx5ib"]
 
@@ -189,7 +188,6 @@ animation = &"attack"
 [node name="CONFIG" type="Node" parent="." unique_id=1432507690 node_paths=PackedStringArray("character_animate_sprite")]
 script = ExtResource("38_1so5t")
 character_animate_sprite = NodePath("../player_animation")
-SwordDirectionPreload = ExtResource("38_cq0io")
 
 [node name="Movement" type="Node" parent="." unique_id=1579200286]
 

@@ -1,7 +1,6 @@
 extends Node
 class_name SwordLogic
-@onready var sword_direction = SwordDirection.new()
-@onready var SwordDirectionPreload: GDScript = load(PLAYER_CONFIG.SwordDirection_script)
+var sword_direction := SwordDirection.new()
 
 @onready var sword = get_parent()
 @onready var Hitbox_collision: CollisionShape2D = get_parent().get_node("Hitbox/CollisionShape2D")
@@ -14,8 +13,6 @@ signal character_switch_animation_to_attack()
 
 
 func _ready() -> void:
-	var start_direction = SwordDirectionPreload.new()
-	add_child(start_direction)
 	add_child(sword_direction)
 	sword_direction.setup_logic(self)
 	

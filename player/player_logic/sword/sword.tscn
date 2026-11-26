@@ -22,11 +22,5 @@ metadata/_custom_type_script = "uid://pqfdu33e0kch"
 position = Vector2(0.5, -43)
 shape = SubResource("RectangleShape2D_spjsr")
 
-[node name="ColorRect" type="ColorRect" parent="Hitbox/CollisionShape2D" unique_id=106484316]
-offset_left = -39.5
-offset_top = -83.0
-offset_right = 39.5
-offset_bottom = 80.0
-
 [node name="SwordComponent" type="Node" parent="." unique_id=1502887416]
 script = ExtResource("3_1ck3f")
