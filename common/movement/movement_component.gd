@@ -9,7 +9,7 @@ var _move_direction: Vector2 = Vector2.ZERO
 var _external_impulse: Vector2 = Vector2.ZERO
 
 func set_movement_direction(direction: Vector2) -> void:
-	_move_direction = direction.normalized()
+	_move_direction = direction
 
 func apply_impulse(impulse: Vector2) -> void:
 	_external_impulse += impulse

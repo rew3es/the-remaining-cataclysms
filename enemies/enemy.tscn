@@ -26,6 +26,7 @@
 [ext_resource type="Script" uid="uid://b4ww8bxanpfwn" path="res://common/movement/movement_component.gd" id="24_3hqi2"]
 [ext_resource type="Script" uid="uid://braxhjv3iplwt" path="res://common/movement/knockback_component.gd" id="25_tvbtl"]
 [ext_resource type="Script" uid="uid://dv3flsaf3lhmp" path="res://common/health/hitflash_component.gd" id="26_t0f88"]
+[ext_resource type="Script" uid="uid://bncws0dt4q38s" path="res://common/movement/chase_ai_component.gd" id="27_xb6rl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4pq2v"]
 animations = [{
@@ -101,6 +102,9 @@ size = Vector2(113, 20.300003)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1y3wu"]
 size = Vector2(282, 293)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4pq2v"]
+radius = 208.11775
+
 [node name="Enemy" type="CharacterBody2D" unique_id=481085084 node_paths=PackedStringArray("health_component", "health_bar")]
 collision_layer = 4
 collision_mask = 3
@@ -163,3 +167,21 @@ script = ExtResource("26_t0f88")
 hurtbox = NodePath("../HurtboxComponent")
 target_sprite = NodePath("../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://dv3flsaf3lhmp"
+
+[node name="SeparationArea" type="Area2D" parent="." unique_id=872095964]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeparationArea" unique_id=1921938361]
+position = Vector2(0, -89)
+shape = SubResource("CircleShape2D_4pq2v")
+
+[node name="ChaseAIComponent" type="Node" parent="." unique_id=1222104931 node_paths=PackedStringArray("movement_component", "separation_area", "nav_agent")]
+script = ExtResource("27_xb6rl")
+movement_component = NodePath("../MovementComponent")
+separation_area = NodePath("../SeparationArea")
+nav_agent = NodePath("../NavigationAgent2D")
+aggro_radius = 600.0
+metadata/_custom_type_script = "uid://bncws0dt4q38s"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=347560535]

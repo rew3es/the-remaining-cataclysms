@@ -29,6 +29,7 @@ window/stretch/aspect="expand"
 [global_group]
 
 effect=""
+player=""
 
 [input]
 
@@ -92,6 +93,7 @@ counter_clockwise_camera_rotation={
 2d_physics/layer_4="PlayerHurtbox"
 2d_physics/layer_5="EnemyHurtbox"
 2d_physics/layer_6="Hitboxes"
+2d_physics/layer_7="EnemySeparation"
 
 [physics]
 
