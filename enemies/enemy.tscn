@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://ca26b66iriv1m" path="res://common/attack/hurtbox_component.gd" id="22_ktgcu"]
 [ext_resource type="Script" uid="uid://bu8ql5ppe2lul" path="res://common/health/health_component.gd" id="23_t0f88"]
 [ext_resource type="Script" uid="uid://b4ww8bxanpfwn" path="res://common/movement/movement_component.gd" id="24_3hqi2"]
+[ext_resource type="Script" uid="uid://c5yuxjxj8dkyo" path="res://common/health/health_slot.gd" id="24_o6wa6"]
 [ext_resource type="Script" uid="uid://braxhjv3iplwt" path="res://common/movement/knockback_component.gd" id="25_tvbtl"]
 [ext_resource type="Script" uid="uid://dv3flsaf3lhmp" path="res://common/health/hitflash_component.gd" id="26_t0f88"]
 [ext_resource type="Script" uid="uid://bncws0dt4q38s" path="res://common/movement/chase_ai_component.gd" id="27_xb6rl"]
@@ -102,6 +103,31 @@ size = Vector2(113, 56.700005)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1y3wu"]
 size = Vector2(282, 293)
 
+[sub_resource type="Resource" id="Resource_xb6rl"]
+script = ExtResource("24_o6wa6")
+part_name = "Head"
+hit_weight = 10
+metadata/_custom_type_script = "uid://c5yuxjxj8dkyo"
+
+[sub_resource type="Resource" id="Resource_o6wa6"]
+script = ExtResource("24_o6wa6")
+hit_weight = 60
+metadata/_custom_type_script = "uid://c5yuxjxj8dkyo"
+
+[sub_resource type="Resource" id="Resource_d8eyj"]
+script = ExtResource("24_o6wa6")
+part_name = "Hands"
+deadly = false
+hit_weight = 10
+metadata/_custom_type_script = "uid://c5yuxjxj8dkyo"
+
+[sub_resource type="Resource" id="Resource_6krve"]
+script = ExtResource("24_o6wa6")
+part_name = "Legs"
+deadly = false
+hit_weight = 20
+metadata/_custom_type_script = "uid://c5yuxjxj8dkyo"
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_4pq2v"]
 radius = 386.1567
 
@@ -148,6 +174,7 @@ shape = SubResource("RectangleShape2D_1y3wu")
 [node name="HealthComponent" type="Node" parent="." unique_id=1382038482 node_paths=PackedStringArray("hurtbox")]
 script = ExtResource("23_t0f88")
 hurtbox = NodePath("../HurtboxComponent")
+slots = Array[ExtResource("24_o6wa6")]([SubResource("Resource_xb6rl"), SubResource("Resource_o6wa6"), SubResource("Resource_d8eyj"), SubResource("Resource_6krve")])
 metadata/_custom_type_script = "uid://bu8ql5ppe2lul"
 
 [node name="MovementComponent" type="Node" parent="." unique_id=1036085025 node_paths=PackedStringArray("body")]

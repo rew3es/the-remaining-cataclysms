@@ -6,8 +6,8 @@ extends CharacterBody2D
 func _ready() -> void:
 	if health_component:
 		if health_bar:
-			health_bar.max_value = health_component.max_health
-			health_bar.value = health_component.max_health
+			health_bar.max_value = health_component.get_total_max_health()
+			health_bar.value = health_component.get_total_current_health()
 			health_bar.visible = false
 			health_component.health_changed.connect(_on_health_changed)
 		
