@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dbjr2bl8fb3n7" path="res://levels/test_polygon/atlas/atlas.png" id="5_gepml"]
 [ext_resource type="PackedScene" uid="uid://d2w5xkawgfuhm" path="res://levels/test_polygon/stone/stone.tscn" id="8_mwfb5"]
 [ext_resource type="PackedScene" uid="uid://ctbmhtpejjdfb" path="res://player/camera/camera.tscn" id="9_5bhgj"]
+[ext_resource type="PackedScene" uid="uid://b2x5pwrrioqr1" path="res://hud/hud.tscn" id="10_dwkox"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q4ady"]
 
@@ -215,3 +216,5 @@ position = Vector2(769, 949)
 
 [node name="Camera" parent="." unique_id=859262563 node_paths=PackedStringArray("player") instance=ExtResource("9_5bhgj")]
 player = NodePath("../sort_object/player")
+
+[node name="Hud" parent="." unique_id=615614206 instance=ExtResource("10_dwkox")]

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c4fpdahw8galr"]
 
+[ext_resource type="Script" uid="uid://da3w3chmh11j1" path="res://player/player_logic/player.gd" id="1_0n4js"]
 [ext_resource type="Script" uid="uid://bektb0hi2euxj" path="res://player/player_logic/movement/move.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://cni4glvr5mq8n" path="res://player/player_logic/sprites/attack/перс_0001.png" id="3_1s1yo"]
 [ext_resource type="PackedScene" uid="uid://c36qrlydhvyw5" path="res://player/player_logic/sword/sword.tscn" id="3_g1dw6"]
@@ -40,6 +41,9 @@
 [ext_resource type="Script" uid="uid://caux4528djvo8" path="res://player/player_logic/config.gd" id="38_1so5t"]
 [ext_resource type="Script" uid="uid://bganf7bfhshk" path="res://player/player_logic/movement/dash.gd" id="39_55jnj"]
 [ext_resource type="Script" uid="uid://cxp8uypmtalrr" path="res://player/player_logic/sprites/player_animation_switch_system.gd" id="40_dx5ib"]
+[ext_resource type="Script" uid="uid://bu8ql5ppe2lul" path="res://common/health/health_component.gd" id="42_rwrl3"]
+[ext_resource type="Script" uid="uid://c5yuxjxj8dkyo" path="res://common/health/health_slot.gd" id="43_5p4bi"]
+[ext_resource type="Script" uid="uid://ca26b66iriv1m" path="res://common/attack/hurtbox_component.gd" id="44_ghpp3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pby22"]
 radius = 4.9999995
@@ -167,7 +171,37 @@ animations = [{
 "speed": 45.0
 }]
 
-[node name="player" type="CharacterBody2D" unique_id=9046938 groups=["player"]]
+[sub_resource type="Resource" id="Resource_xct66"]
+script = ExtResource("43_5p4bi")
+part_name = "Head"
+hit_weight = 10
+metadata/_custom_type_script = "uid://c5yuxjxj8dkyo"
+
+[sub_resource type="Resource" id="Resource_1y3wu"]
+script = ExtResource("43_5p4bi")
+hit_weight = 60
+metadata/_custom_type_script = "uid://c5yuxjxj8dkyo"
+
+[sub_resource type="Resource" id="Resource_8w2rd"]
+script = ExtResource("43_5p4bi")
+part_name = "Hands"
+deadly = false
+hit_weight = 10
+metadata/_custom_type_script = "uid://c5yuxjxj8dkyo"
+
+[sub_resource type="Resource" id="Resource_63jni"]
+script = ExtResource("43_5p4bi")
+part_name = "Legs"
+deadly = false
+hit_weight = 20
+metadata/_custom_type_script = "uid://c5yuxjxj8dkyo"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pq2v"]
+size = Vector2(142, 185)
+
+[node name="player" type="CharacterBody2D" unique_id=9046938 node_paths=PackedStringArray("health_component") groups=["player"]]
+script = ExtResource("1_0n4js")
+health_component = NodePath("HealthComponent")
 
 [node name="player_collision" type="CollisionShape2D" parent="." unique_id=802244932]
 position = Vector2(0, 31)
@@ -203,3 +237,19 @@ player_animation = NodePath("../../player_animation")
 
 [node name="AnimationSwitcher" type="Node" parent="Movement/MoveComponent" unique_id=739447886]
 script = ExtResource("40_dx5ib")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=120493634 node_paths=PackedStringArray("hurtbox")]
+script = ExtResource("42_rwrl3")
+hurtbox = NodePath("../HurtboxComponent")
+slots = Array[ExtResource("43_5p4bi")]([SubResource("Resource_xct66"), SubResource("Resource_1y3wu"), SubResource("Resource_8w2rd"), SubResource("Resource_63jni")])
+metadata/_custom_type_script = "uid://bu8ql5ppe2lul"
+
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=207342792]
+collision_layer = 8
+collision_mask = 32
+script = ExtResource("44_ghpp3")
+metadata/_custom_type_script = "uid://ca26b66iriv1m"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=741705660]
+position = Vector2(-2, -56.5)
+shape = SubResource("RectangleShape2D_4pq2v")

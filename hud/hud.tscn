@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b2x5pwrrioqr1"]
+
+[ext_resource type="Script" uid="uid://baqwstis50bw7" path="res://hud/hud.gd" id="1_6ca3a"]
+
+[node name="HUD" type="CanvasLayer" unique_id=740917260 node_paths=PackedStringArray("health_bar")]
+script = ExtResource("1_6ca3a")
+health_bar = NodePath("RootControl/MarginContainer/ProgressBar")
+
+[node name="RootControl" type="Control" parent="." unique_id=96694077]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="RootControl" unique_id=175913976]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="ProgressBar" type="ProgressBar" parent="RootControl/MarginContainer" unique_id=1739873022]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
