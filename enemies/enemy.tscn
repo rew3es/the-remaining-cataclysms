@@ -180,6 +180,7 @@ shape = SubResource("CircleShape2D_4pq2v")
 script = ExtResource("27_xb6rl")
 movement_component = NodePath("../MovementComponent")
 separation_area = NodePath("../SeparationArea")
+aggro_radius = 600.0
 metadata/_custom_type_script = "uid://bncws0dt4q38s"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=347560535]
