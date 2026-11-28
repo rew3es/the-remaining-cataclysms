@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://behg6t5tyig1"]
+
+[ext_resource type="Script" uid="uid://icx0sqsxwwjl" path="res://hud/slot_ui.gd" id="1_d5uj2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5a2nf"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="SlotUI" type="HBoxContainer" unique_id=1790500458]
+offset_right = 194.0
+offset_bottom = 59.0
+mouse_filter = 2
+script = ExtResource("1_d5uj2")
+
+[node name="PartNameLabel" type="Label" parent="." unique_id=1175804655]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+vertical_alignment = 1
+
+[node name="SlotProgressBar" type="ProgressBar" parent="." unique_id=383564695]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_5a2nf")
+show_percentage = false

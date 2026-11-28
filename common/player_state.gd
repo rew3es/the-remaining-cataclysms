@@ -1,6 +1,7 @@
 extends Node
 
 signal health_changed(current_health: int, max_health: int)
+signal slots_registered(slots: Array[HealthSlot])
 signal slot_updated(slot: HealthSlot)
 signal player_died
 
@@ -11,6 +12,7 @@ var health_slots: Array[HealthSlot] = []
 func register_health_slots(slots: Array[HealthSlot]) -> void:
 	health_slots = slots
 	_recalculate_health()
+	slots_registered.emit(health_slots)
 
 func notify_health_updated(damaged_slot: HealthSlot = null) -> void:
 	_recalculate_health()
