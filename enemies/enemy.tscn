@@ -1,11 +1,8 @@
 [gd_scene format=3 uid="uid://dbu2u1t5oqesg"]
 
-[ext_resource type="Script" uid="uid://da1j2oin2bttp" path="res://enemies/dummy.gd" id="1_eqjt0"]
-[ext_resource type="Script" uid="uid://cvr1vungcdpkv" path="res://common/Hurtbox.gd" id="2_fot1n"]
+[ext_resource type="Script" uid="uid://da1j2oin2bttp" path="res://enemies/enemy.gd" id="1_eqjt0"]
 [ext_resource type="Texture2D" uid="uid://culvj134d5e1x" path="res://enemies/dummy/idle/Idle_Body_0001.png" id="2_rxq3h"]
-[ext_resource type="PackedScene" uid="uid://cvu2k8h68i23y" path="res://common/health_system.tscn" id="3_aomga"]
 [ext_resource type="Texture2D" uid="uid://dictfkqr8b30h" path="res://enemies/dummy/idle/Idle_Body_0002.png" id="3_ktgcu"]
-[ext_resource type="Script" uid="uid://dbv0tsravlwwk" path="res://common/DamageNumberSpawner.gd" id="4_fot1n"]
 [ext_resource type="Texture2D" uid="uid://bhhocseyrf4ag" path="res://enemies/dummy/idle/Idle_Body_0003.png" id="4_t0f88"]
 [ext_resource type="Texture2D" uid="uid://dfdnjq85hgk2q" path="res://enemies/dummy/idle/Idle_Body_0004.png" id="5_3hqi2"]
 [ext_resource type="Texture2D" uid="uid://dqsit6a0tp0kf" path="res://enemies/dummy/idle/Idle_Body_0005.png" id="6_tvbtl"]
@@ -24,6 +21,11 @@
 [ext_resource type="Texture2D" uid="uid://c0hclriwgg2o3" path="res://enemies/dummy/idle/Idle_Body_0018.png" id="19_a5c2e"]
 [ext_resource type="Texture2D" uid="uid://dfysbcmskcpva" path="res://enemies/dummy/idle/Idle_Body_0019.png" id="20_r5hlg"]
 [ext_resource type="Texture2D" uid="uid://dj117kmqqy4rl" path="res://enemies/dummy/idle/Idle_Body_0020.png" id="21_fw8ck"]
+[ext_resource type="Script" uid="uid://ca26b66iriv1m" path="res://common/attack/hurtbox_component.gd" id="22_ktgcu"]
+[ext_resource type="Script" uid="uid://bu8ql5ppe2lul" path="res://common/health/health_component.gd" id="23_t0f88"]
+[ext_resource type="Script" uid="uid://b4ww8bxanpfwn" path="res://common/movement/movement_component.gd" id="24_3hqi2"]
+[ext_resource type="Script" uid="uid://braxhjv3iplwt" path="res://common/movement/knockback_component.gd" id="25_tvbtl"]
+[ext_resource type="Script" uid="uid://dv3flsaf3lhmp" path="res://common/health/hitflash_component.gd" id="26_t0f88"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4pq2v"]
 animations = [{
@@ -96,14 +98,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pq2v"]
 size = Vector2(113, 20.300003)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xct66"]
-size = Vector2(111.99999, 60.8)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1y3wu"]
+size = Vector2(282, 293)
 
-[node name="Dummy" type="CharacterBody2D" unique_id=481085084]
+[node name="Enemy" type="CharacterBody2D" unique_id=481085084 node_paths=PackedStringArray("health_component", "health_bar")]
 collision_layer = 4
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_eqjt0")
+health_component = NodePath("HealthComponent")
+health_bar = NodePath("ProgressBar")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1494760421]
 position = Vector2(-1.9999999, -97.99999)
@@ -119,25 +123,6 @@ position = Vector2(-1.4999999, 32.375008)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_4pq2v")
 
-[node name="Hurtbox" type="Area2D" parent="." unique_id=833816414]
-position = Vector2(-2, -98)
-collision_layer = 16
-collision_mask = 32
-script = ExtResource("2_fot1n")
-metadata/_custom_type_script = "uid://cvr1vungcdpkv"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1571007093]
-z_index = 3
-position = Vector2(-1.9073486e-06, 41)
-scale = Vector2(2.5, 2.5)
-shape = SubResource("RectangleShape2D_xct66")
-
-[node name="HealthSystem" parent="." unique_id=2017475754 node_paths=PackedStringArray("hurtbox", "health_bar") instance=ExtResource("3_aomga")]
-position = Vector2(-2, -98)
-max_health = 50
-hurtbox = NodePath("../Hurtbox")
-health_bar = NodePath("../ProgressBar")
-
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=588924273]
 offset_left = -147.0
 offset_top = -276.0
@@ -146,9 +131,35 @@ offset_bottom = -270.0
 scale = Vector2(2.5221586, 3)
 show_percentage = false
 
-[node name="DamageNumberSpawner" type="Node2D" parent="." unique_id=604121068 node_paths=PackedStringArray("health_system")]
-position = Vector2(-1, -341)
-script = ExtResource("4_fot1n")
-health_system = NodePath("../HealthSystem")
-font_size = 64
-metadata/_custom_type_script = "uid://dbv0tsravlwwk"
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=1359854249]
+collision_layer = 16
+collision_mask = 32
+script = ExtResource("22_ktgcu")
+metadata/_custom_type_script = "uid://ca26b66iriv1m"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=661812951]
+position = Vector2(0, -88.5)
+shape = SubResource("RectangleShape2D_1y3wu")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1382038482 node_paths=PackedStringArray("hurtbox")]
+script = ExtResource("23_t0f88")
+hurtbox = NodePath("../HurtboxComponent")
+metadata/_custom_type_script = "uid://bu8ql5ppe2lul"
+
+[node name="MovementComponent" type="Node" parent="." unique_id=1036085025 node_paths=PackedStringArray("body")]
+script = ExtResource("24_3hqi2")
+body = NodePath("..")
+friction = 400.0
+metadata/_custom_type_script = "uid://b4ww8bxanpfwn"
+
+[node name="KnockbackComponent" type="Node" parent="." unique_id=519707999 node_paths=PackedStringArray("hurtbox", "movement_component")]
+script = ExtResource("25_tvbtl")
+hurtbox = NodePath("../HurtboxComponent")
+movement_component = NodePath("../MovementComponent")
+metadata/_custom_type_script = "uid://braxhjv3iplwt"
+
+[node name="HitflashComponent" type="Node" parent="." unique_id=1870165442 node_paths=PackedStringArray("hurtbox", "target_sprite")]
+script = ExtResource("26_t0f88")
+hurtbox = NodePath("../HurtboxComponent")
+target_sprite = NodePath("../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://dv3flsaf3lhmp"

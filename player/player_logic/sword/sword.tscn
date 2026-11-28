@@ -1,26 +1,31 @@
 [gd_scene format=3 uid="uid://c36qrlydhvyw5"]
 
-[ext_resource type="Script" uid="uid://pqfdu33e0kch" path="res://common/Hitbox.gd" id="1_qnclt"]
 [ext_resource type="Script" uid="uid://j32ivn7d2nhr" path="res://player/player_logic/sword/sword.gd" id="1_spjsr"]
+[ext_resource type="Script" uid="uid://bqhvw622e1ott" path="res://common/attack/hitbox_component.gd" id="3_0rg1i"]
 [ext_resource type="Script" uid="uid://q88lp87t04m5" path="res://player/player_logic/sword/sword_damage_logic.gd" id="3_1ck3f"]
+[ext_resource type="Script" uid="uid://bicplxw4v4t6j" path="res://common/attack/attack_data.gd" id="4_ycehv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_spjsr"]
-size = Vector2(81, 160)
+[sub_resource type="Resource" id="Resource_ycehv"]
+script = ExtResource("4_ycehv")
+knockback_force = 1000.0
+metadata/_custom_type_script = "uid://bicplxw4v4t6j"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pq2v"]
+size = Vector2(81, 161)
 
 [node name="Sword" type="Node2D" unique_id=478413639]
 script = ExtResource("1_spjsr")
 
-[node name="Hitbox" type="Area2D" parent="." unique_id=26406097]
-position = Vector2(0, -27)
-collision_layer = 32
-collision_mask = 16
-script = ExtResource("1_qnclt")
-damage = 15
-metadata/_custom_type_script = "uid://pqfdu33e0kch"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1135239284]
-position = Vector2(0.5, -43)
-shape = SubResource("RectangleShape2D_spjsr")
-
 [node name="SwordComponent" type="Node" parent="." unique_id=1502887416]
 script = ExtResource("3_1ck3f")
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=1901833976]
+collision_layer = 32
+collision_mask = 16
+script = ExtResource("3_0rg1i")
+attack_data = SubResource("Resource_ycehv")
+metadata/_custom_type_script = "uid://bqhvw622e1ott"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=367192893]
+position = Vector2(0.5, -69.5)
+shape = SubResource("RectangleShape2D_4pq2v")

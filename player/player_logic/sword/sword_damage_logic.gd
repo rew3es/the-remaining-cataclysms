@@ -3,8 +3,8 @@ class_name SwordLogic
 var sword_direction := SwordDirection.new()
 
 @onready var sword = get_parent()
-@onready var Hitbox_collision: CollisionShape2D = get_parent().get_node("Hitbox/CollisionShape2D")
-@onready var hitbox: Hitbox = get_parent().get_node("Hitbox")
+@onready var Hitbox_collision: CollisionShape2D = get_parent().get_node("HitboxComponent/CollisionShape2D")
+@onready var hitbox: HitboxComponent = get_parent().get_node("HitboxComponent")
 var is_attack_now: bool = false
 var can_attack: bool = true
 var current_attack_type

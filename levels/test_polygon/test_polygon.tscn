@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c4fpdahw8galr" path="res://player/player_logic/player.tscn" id="3_fiuai"]
 [ext_resource type="Texture2D" uid="uid://dsttmdd7r6hla" path="res://levels/test_polygon/atlas/ааааатлас.png" id="3_mwfb5"]
 [ext_resource type="Texture2D" uid="uid://c24ugvfhjvqp8" path="res://levels/test_polygon/atlas/atlas_temp_19_11_2026.png" id="4_gepml"]
-[ext_resource type="PackedScene" uid="uid://dbu2u1t5oqesg" path="res://enemies/dummy.tscn" id="4_mwfb5"]
+[ext_resource type="PackedScene" uid="uid://dbu2u1t5oqesg" path="res://enemies/enemy.tscn" id="4_mwfb5"]
 [ext_resource type="Texture2D" uid="uid://dbjr2bl8fb3n7" path="res://levels/test_polygon/atlas/atlas.png" id="5_gepml"]
 [ext_resource type="PackedScene" uid="uid://d2w5xkawgfuhm" path="res://levels/test_polygon/stone/stone.tscn" id="8_mwfb5"]
 [ext_resource type="PackedScene" uid="uid://ctbmhtpejjdfb" path="res://player/camera/camera.tscn" id="9_5bhgj"]

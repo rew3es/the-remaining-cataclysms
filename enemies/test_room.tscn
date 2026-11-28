@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dl7ef30j6hdjo"]
 
-[ext_resource type="PackedScene" uid="uid://dbu2u1t5oqesg" path="res://enemies/dummy.tscn" id="1_pxq05"]
+[ext_resource type="PackedScene" uid="uid://dbu2u1t5oqesg" path="res://enemies/enemy.tscn" id="1_pxq05"]
 [ext_resource type="PackedScene" uid="uid://dm1epgxem42yl" path="res://enemies/player.tscn" id="2_5oau6"]
 
 [node name="TestRoom" type="Node2D" unique_id=486230653]
