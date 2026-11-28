@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://f0nvdijh83mv"]
+
+[ext_resource type="Script" uid="uid://cdslsjbpi6o7a" path="res://common/health/floating_text.gd" id="1_d8aiw"]
+
+[node name="FloatingText" type="Node2D" unique_id=982733773]
+script = ExtResource("1_d8aiw")
+
+[node name="Label" type="Label" parent="." unique_id=359196196]
+offset_left = -100.0
+offset_top = -15.0
+offset_right = 100.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1

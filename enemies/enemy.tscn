@@ -28,6 +28,8 @@
 [ext_resource type="Script" uid="uid://braxhjv3iplwt" path="res://common/movement/knockback_component.gd" id="25_tvbtl"]
 [ext_resource type="Script" uid="uid://dv3flsaf3lhmp" path="res://common/health/hitflash_component.gd" id="26_t0f88"]
 [ext_resource type="Script" uid="uid://bncws0dt4q38s" path="res://common/movement/chase_ai_component.gd" id="27_xb6rl"]
+[ext_resource type="Script" uid="uid://cnishw0n20cu8" path="res://common/health/floating_text_spawner.gd" id="29_6krve"]
+[ext_resource type="PackedScene" uid="uid://f0nvdijh83mv" path="res://common/health/floating_text.tscn" id="30_0mknq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4pq2v"]
 animations = [{
@@ -211,3 +213,10 @@ aggro_radius = 600.0
 metadata/_custom_type_script = "uid://bncws0dt4q38s"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=347560535]
+
+[node name="FloatingTextSpawner" type="Node" parent="." unique_id=1987461425 node_paths=PackedStringArray("health_component")]
+script = ExtResource("29_6krve")
+health_component = NodePath("../HealthComponent")
+text_scene = ExtResource("30_0mknq")
+spawn_offset = Vector2(0, -350)
+metadata/_custom_type_script = "uid://cnishw0n20cu8"
